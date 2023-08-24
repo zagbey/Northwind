@@ -1,2 +1,2 @@
 # Northwind
- Nortwind project with ADO.NET
+ Nortwind project with Dapper
