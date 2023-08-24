@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace NorthwindProject.DataAccess
 {
-    internal class DbSettings
+    public class DbSettings
     {
+        public const string ConnectionString = "Server=SQLEGITIM; Database=Nortwind; User Id=sa; Password=123456789zg";
     }
 }
