@@ -46,5 +46,19 @@ namespace NorthwindProject.WinForms
             categoryList.MdiParent = this;
             categoryList.Show();
         }
+
+        private void menuSupplierCreate_Click(object sender, EventArgs e)
+        {
+            var supplierAdd = new SupplierCreateForm();
+            supplierAdd.MdiParent = this;
+            supplierAdd.Show();
+        }
+
+        private void menuSupplierList_Click(object sender, EventArgs e)
+        {
+            var suppliersList = new SupplierListForm();
+            suppliersList.MdiParent = this;
+            suppliersList.Show();
+        }
     }
 }

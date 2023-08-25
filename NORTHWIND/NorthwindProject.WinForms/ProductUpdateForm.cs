@@ -18,7 +18,7 @@ namespace NorthwindProject.WinForms
     {
         private readonly ProductRepository _productRepo = new ProductRepository();
         private readonly CategoryRepository _categoryRepo = new CategoryRepository();
-        private readonly SuppliersRepository _supplierRepo = new SuppliersRepository();
+        private readonly SupplierRepository _supplierRepo = new SupplierRepository();
         private int _product;
         public ProductUpdateForm(int productId)
         {

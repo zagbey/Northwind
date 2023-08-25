@@ -39,7 +39,7 @@ namespace NorthwindProject.DataAccess
         }
 
         //Find ;GetByID : bildirdiğim ıd değerine sahip olan tek kaydı getir 
-        public Category Find(int categoryId)
+        public Category? Find(int categoryId)
         {
             const string sqlText = "select * from Categories where CategoryID=@categoryId";
             try

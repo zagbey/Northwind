@@ -15,7 +15,7 @@ namespace NorthwindProject.WinForms
     public partial class ProductCreateForm : Form
     {
         ProductRepository _proRepo = new ProductRepository();
-        SuppliersRepository _supRepo = new SuppliersRepository();
+        SupplierRepository _supRepo = new SupplierRepository();
         public ProductCreateForm()
         {
             InitializeComponent();

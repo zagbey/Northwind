@@ -11,9 +11,9 @@ using System.Threading.Tasks;
 
 namespace NorthwindProject.DataAccess
 {
-    public class SuppliersRepository
+    public class SupplierRepository
     {
-        public List<Suppliers> Getall()
+        public List<Supplier> Getall()
         {
 
             const string sqlText = "select * from Suppliers";
@@ -21,7 +21,7 @@ namespace NorthwindProject.DataAccess
             {
                 using (var conn = new SqlConnection(DbSettings.ConnectionString))
                 {
-                    var suppliersList = conn.Query<Suppliers>(sqlText).ToList();
+                    var suppliersList = conn.Query<Supplier>(sqlText).ToList();
                     return suppliersList;
                 }
 
@@ -29,12 +29,12 @@ namespace NorthwindProject.DataAccess
             catch (Exception ex)
             {
                 Trace.TraceError(ex.ToString());
-                return new List<Suppliers> { }; //boş bir listeyi temsil etmek için yaptık 
+                return new List<Supplier> { }; //boş bir listeyi temsil etmek için yaptık 
                                                 //null değer değil de bunun yerine boş bir liste çeviriyoruz 
             }
 
         }
-        public bool Update(Suppliers supplier)
+        public bool Update(Supplier supplier)
         {
 
             const string supplierQueru = @"
@@ -70,14 +70,14 @@ where SupplierID = @SupplierID
             }
 
         }
-        public Suppliers Find(int supplierId)
+        public Supplier Find(int supplierId)
         {
             try
             {
                 const string sqlQuery = @"select * from Suppliers where SupplierID=@SupplierID";
                 using (var conn = new SqlConnection(DbSettings.ConnectionString))
                 {
-                    var suppliers = conn.QuerySingleOrDefault<Suppliers>(sqlQuery,new {supplierId});
+                    var suppliers = conn.QuerySingleOrDefault<Supplier>(sqlQuery,new {supplierId});
                     return suppliers;
                 }
             }
@@ -88,7 +88,7 @@ where SupplierID = @SupplierID
             }
             
         }
-        public bool Add(Suppliers suppliers)
+        public bool Add(Supplier suppliers)
         {
             const string addSupliers = @"
 insert into Suppliers (
@@ -119,7 +119,7 @@ values (@CompanyName,@ContactName,@ContactTitle,@Address,@City,@Region,@PostalCo
                 
             }
         }
-        public bool Remove(Suppliers suppliers)
+        public bool Remove(Supplier suppliers)
         {
             try
             {
@@ -151,7 +151,7 @@ values (@CompanyName,@ContactName,@ContactTitle,@Address,@City,@Region,@PostalCo
         }
         public bool Remove(int supplierId)
         {
-            var suppliers = new Suppliers()
+            var suppliers = new Supplier()
             {
                 SupplierID = supplierId
             };

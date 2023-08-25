@@ -37,12 +37,15 @@
             kategoriYönetimiToolStripMenuItem = new ToolStripMenuItem();
             menuNewCategory = new ToolStripMenuItem();
             menuCategoryList = new ToolStripMenuItem();
+            tedarikçiYönetimiToolStripMenuItem = new ToolStripMenuItem();
+            menuSupplierCreate = new ToolStripMenuItem();
+            menuSupplierList = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { siparişYönetimiToolStripMenuItem, ürünYönetimiToolStripMenuItem, kategoriYönetimiToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { siparişYönetimiToolStripMenuItem, ürünYönetimiToolStripMenuItem, kategoriYönetimiToolStripMenuItem, tedarikçiYönetimiToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1139, 24);
@@ -95,16 +98,37 @@
             // menuNewCategory
             // 
             menuNewCategory.Name = "menuNewCategory";
-            menuNewCategory.Size = new Size(180, 22);
+            menuNewCategory.Size = new Size(158, 22);
             menuNewCategory.Text = "Yeni Kategori";
             menuNewCategory.Click += menuNewCategory_Click;
             // 
             // menuCategoryList
             // 
             menuCategoryList.Name = "menuCategoryList";
-            menuCategoryList.Size = new Size(180, 22);
+            menuCategoryList.Size = new Size(158, 22);
             menuCategoryList.Text = "Tüm Kategoriler";
             menuCategoryList.Click += menuCategoryList_Click;
+            // 
+            // tedarikçiYönetimiToolStripMenuItem
+            // 
+            tedarikçiYönetimiToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { menuSupplierCreate, menuSupplierList });
+            tedarikçiYönetimiToolStripMenuItem.Name = "tedarikçiYönetimiToolStripMenuItem";
+            tedarikçiYönetimiToolStripMenuItem.Size = new Size(115, 20);
+            tedarikçiYönetimiToolStripMenuItem.Text = "Tedarikçi Yönetimi";
+            // 
+            // menuSupplierCreate
+            // 
+            menuSupplierCreate.Name = "menuSupplierCreate";
+            menuSupplierCreate.Size = new Size(180, 22);
+            menuSupplierCreate.Text = "Tedarikçi Ekle";
+            menuSupplierCreate.Click += menuSupplierCreate_Click;
+            // 
+            // menuSupplierList
+            // 
+            menuSupplierList.Name = "menuSupplierList";
+            menuSupplierList.Size = new Size(180, 22);
+            menuSupplierList.Text = "Tedarikçileri Listele";
+            menuSupplierList.Click += menuSupplierList_Click;
             // 
             // Form1
             // 
@@ -133,5 +157,8 @@
         private ToolStripMenuItem kategoriYönetimiToolStripMenuItem;
         private ToolStripMenuItem menuNewCategory;
         private ToolStripMenuItem menuCategoryList;
+        private ToolStripMenuItem tedarikçiYönetimiToolStripMenuItem;
+        private ToolStripMenuItem menuSupplierCreate;
+        private ToolStripMenuItem menuSupplierList;
     }
 }
