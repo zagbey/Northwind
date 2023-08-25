@@ -14,7 +14,6 @@ namespace NorthwindProject.DataAccess
 {
     public class CategoryRepository
     {
-        private const string ConnectionString = "Server=SQLEGITIM; Database=Nortwind; User Id=sa; Password=123456789zg";
         //category List Form da oluşan kategoriyi bir category<>list oluşturup içine atıyoruz ordan geliyo
 
         //veritabanındaki tüm kayıtları getir
@@ -23,7 +22,7 @@ namespace NorthwindProject.DataAccess
             const string sqlText = "select * from Categories";
             try
             {
-                using (var conn = new SqlConnection(ConnectionString))
+                using (var conn = new SqlConnection(DbSettings.ConnectionString))
                 {
                     var categoryList = conn.Query<Category>(sqlText).ToList();
                     return categoryList;
@@ -45,7 +44,7 @@ namespace NorthwindProject.DataAccess
             const string sqlText = "select * from Categories where CategoryID=@categoryId";
             try
             {
-                using (var sqlConn = new SqlConnection(ConnectionString))
+                using (var sqlConn = new SqlConnection(DbSettings.ConnectionString))
                 {
                     var category = sqlConn.QuerySingleOrDefault<Category>(sqlText, new { categoryId });//sorgu sonucunu kategoriye maple <Category>
                     //QuerySingleOrDefaolut veri tabanından tek bir satır halinde verleri çekmeye yarıyor
@@ -70,7 +69,7 @@ namespace NorthwindProject.DataAccess
                                             ";
             try
             {
-                using (var conn = new SqlConnection(ConnectionString))
+                using (var conn = new SqlConnection(DbSettings.ConnectionString))
                 {
                     conn.Execute(sqlQuery, category);
                     return true;
@@ -78,7 +77,7 @@ namespace NorthwindProject.DataAccess
             }
             catch (Exception ex)
             {
-                Trace.TraceError (ex.ToString());
+                Trace.TraceError(ex.ToString());
                 return false;
             }
         }
@@ -97,10 +96,10 @@ where CategoryID=@CategoryID
 ";
             try
             {
-                using (var conn = new SqlConnection(ConnectionString))
+                using (var conn = new SqlConnection(DbSettings.ConnectionString))
                 {
-                    var affectedRows =conn.Execute(updateCategorySql, category);
-                    return affectedRows > 0?true:false;
+                    var affectedRows = conn.Execute(updateCategorySql, category);
+                    return affectedRows > 0 ? true : false;
                 }
             }
             catch (Exception ex)
@@ -140,7 +139,7 @@ where CategoryID=@CategoryID
                 CategoryID = categoryId
             };
 
-            return Remove(category); 
+            return Remove(category);
         }
     }
 }
