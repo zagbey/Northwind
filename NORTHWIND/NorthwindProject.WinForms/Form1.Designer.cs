@@ -34,12 +34,15 @@
             ürünYönetimiToolStripMenuItem = new ToolStripMenuItem();
             menuNewProduct = new ToolStripMenuItem();
             menuProductList = new ToolStripMenuItem();
+            kategoriYönetimiToolStripMenuItem = new ToolStripMenuItem();
+            menuNewCategory = new ToolStripMenuItem();
+            menuCategoryList = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { siparişYönetimiToolStripMenuItem, ürünYönetimiToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { siparişYönetimiToolStripMenuItem, ürünYönetimiToolStripMenuItem, kategoriYönetimiToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1139, 24);
@@ -71,16 +74,37 @@
             // menuNewProduct
             // 
             menuNewProduct.Name = "menuNewProduct";
-            menuNewProduct.Size = new Size(180, 22);
+            menuNewProduct.Size = new Size(140, 22);
             menuNewProduct.Text = "Yeni Ürün";
             menuNewProduct.Click += menuNewProduct_Click;
             // 
             // menuProductList
             // 
             menuProductList.Name = "menuProductList";
-            menuProductList.Size = new Size(180, 22);
+            menuProductList.Size = new Size(140, 22);
             menuProductList.Text = "Tüm Ürünler";
             menuProductList.Click += menuProductList_Click;
+            // 
+            // kategoriYönetimiToolStripMenuItem
+            // 
+            kategoriYönetimiToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { menuNewCategory, menuCategoryList });
+            kategoriYönetimiToolStripMenuItem.Name = "kategoriYönetimiToolStripMenuItem";
+            kategoriYönetimiToolStripMenuItem.Size = new Size(116, 20);
+            kategoriYönetimiToolStripMenuItem.Text = "Kategori Yönetimi ";
+            // 
+            // menuNewCategory
+            // 
+            menuNewCategory.Name = "menuNewCategory";
+            menuNewCategory.Size = new Size(180, 22);
+            menuNewCategory.Text = "Yeni Kategori";
+            menuNewCategory.Click += menuNewCategory_Click;
+            // 
+            // menuCategoryList
+            // 
+            menuCategoryList.Name = "menuCategoryList";
+            menuCategoryList.Size = new Size(180, 22);
+            menuCategoryList.Text = "Tüm Kategoriler";
+            menuCategoryList.Click += menuCategoryList_Click;
             // 
             // Form1
             // 
@@ -106,5 +130,8 @@
         private ToolStripMenuItem ürünYönetimiToolStripMenuItem;
         private ToolStripMenuItem menuNewProduct;
         private ToolStripMenuItem menuProductList;
+        private ToolStripMenuItem kategoriYönetimiToolStripMenuItem;
+        private ToolStripMenuItem menuNewCategory;
+        private ToolStripMenuItem menuCategoryList;
     }
 }

@@ -32,5 +32,19 @@ namespace NorthwindProject.WinForms
             productList.MdiParent = this;
             productList.Show();
         }
+
+        private void menuNewCategory_Click(object sender, EventArgs e)
+        {
+            var category = new CategoryCreateForm();
+            category.MdiParent = this;
+            category.Show();
+        }
+
+        private void menuCategoryList_Click(object sender, EventArgs e)
+        {
+            var categoryList = new CategoryListForm();
+            categoryList.MdiParent = this;
+            categoryList.Show();
+        }
     }
 }
