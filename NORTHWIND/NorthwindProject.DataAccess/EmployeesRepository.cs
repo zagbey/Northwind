@@ -12,14 +12,14 @@ namespace NorthwindProject.DataAccess
 {
     public class EmployeesRepository
     {
-        public List<Employees> GetAll()
+        public List<Employee> GetAll()
         {
             const string sqlText = "select * from Employees";
             try
             {
                 using (var conn = new SqlConnection(DbSettings.ConnectionString))
                 {
-                    var employeesList = conn.Query<Employees>(sqlText).ToList();
+                    var employeesList = conn.Query<Employee>(sqlText).ToList();
                     return employeesList;
                 }
 
@@ -27,12 +27,12 @@ namespace NorthwindProject.DataAccess
             catch (Exception ex)
             {
                 Trace.TraceError(ex.ToString());
-                return new List<Employees> { }; //boş bir listeyi temsil etmek için yaptık 
+                return new List<Employee> { }; //boş bir listeyi temsil etmek için yaptık 
                                               //null değer değil de bunun yerine boş bir liste çeviriyoruz 
             }
 
         }
-        public bool Update(Employees employees)
+        public bool Update(Employee employees)
         {
 
             const string updateEmployees = @"
@@ -73,14 +73,14 @@ where EmployeeID = @EmployeeID
             }
 
         }
-        public Employees Find(int employeeId)
+        public Employee Find(int employeeId)
         {
             const string sqlText = "select * from Employees where EmployeeID=@employeeId";
             try
             {
                 using (var sqlConn = new SqlConnection(DbSettings.ConnectionString))
                 {
-                    var employee = sqlConn.QuerySingleOrDefault<Employees>(sqlText, new { employeeId });//sorgu sonucunu kategoriye maple <Employee>
+                    var employee = sqlConn.QuerySingleOrDefault<Employee>(sqlText, new { employeeId });//sorgu sonucunu kategoriye maple <Employee>
                     //QuerySingleOrDefaolut veri tabanından tek bir satır halinde verleri çekmeye yarıyor
                     return employee;
                 }
@@ -94,7 +94,7 @@ where EmployeeID = @EmployeeID
 
 
         }
-        public bool Add(Employees employees)
+        public bool Add(Employee employees)
         {
             const string sqlQuery = @"insert into Employees(
 
@@ -151,7 +151,7 @@ values(
             }
         }
 
-        public bool Remove(Employees employees)
+        public bool Remove(Employee employees)
         {
             try
             {
@@ -172,7 +172,7 @@ values(
 
         public bool Remove(int employeeId)
         {
-            var employee = new Employees()
+            var employee = new Employee()
             {
                 EmployeeID = employeeId
             };
