@@ -40,12 +40,15 @@
             tedarikçiYönetimiToolStripMenuItem = new ToolStripMenuItem();
             menuSupplierCreate = new ToolStripMenuItem();
             menuSupplierList = new ToolStripMenuItem();
+            menuShipper = new ToolStripMenuItem();
+            menuShipperCreate = new ToolStripMenuItem();
+            nakliyecileriListeleToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { siparişYönetimiToolStripMenuItem, ürünYönetimiToolStripMenuItem, kategoriYönetimiToolStripMenuItem, tedarikçiYönetimiToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { siparişYönetimiToolStripMenuItem, ürünYönetimiToolStripMenuItem, kategoriYönetimiToolStripMenuItem, tedarikçiYönetimiToolStripMenuItem, menuShipper });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1139, 24);
@@ -119,16 +122,37 @@
             // menuSupplierCreate
             // 
             menuSupplierCreate.Name = "menuSupplierCreate";
-            menuSupplierCreate.Size = new Size(180, 22);
+            menuSupplierCreate.Size = new Size(172, 22);
             menuSupplierCreate.Text = "Tedarikçi Ekle";
             menuSupplierCreate.Click += menuSupplierCreate_Click;
             // 
             // menuSupplierList
             // 
             menuSupplierList.Name = "menuSupplierList";
-            menuSupplierList.Size = new Size(180, 22);
+            menuSupplierList.Size = new Size(172, 22);
             menuSupplierList.Text = "Tedarikçileri Listele";
             menuSupplierList.Click += menuSupplierList_Click;
+            // 
+            // menuShipper
+            // 
+            menuShipper.DropDownItems.AddRange(new ToolStripItem[] { menuShipperCreate, nakliyecileriListeleToolStripMenuItem });
+            menuShipper.Name = "menuShipper";
+            menuShipper.Size = new Size(117, 20);
+            menuShipper.Text = "Nakliyeci Yönetimi";
+            // 
+            // menuShipperCreate
+            // 
+            menuShipperCreate.Name = "menuShipperCreate";
+            menuShipperCreate.Size = new Size(180, 22);
+            menuShipperCreate.Text = "Nakliyeci Ekle";
+            menuShipperCreate.Click += menuShipperCreate_Click;
+            // 
+            // nakliyecileriListeleToolStripMenuItem
+            // 
+            nakliyecileriListeleToolStripMenuItem.Name = "nakliyecileriListeleToolStripMenuItem";
+            nakliyecileriListeleToolStripMenuItem.Size = new Size(180, 22);
+            nakliyecileriListeleToolStripMenuItem.Text = "Nakliyecileri Listele";
+            nakliyecileriListeleToolStripMenuItem.Click += nakliyecileriListeleToolStripMenuItem_Click;
             // 
             // Form1
             // 
@@ -160,5 +184,8 @@
         private ToolStripMenuItem tedarikçiYönetimiToolStripMenuItem;
         private ToolStripMenuItem menuSupplierCreate;
         private ToolStripMenuItem menuSupplierList;
+        private ToolStripMenuItem menuShipper;
+        private ToolStripMenuItem menuShipperCreate;
+        private ToolStripMenuItem nakliyecileriListeleToolStripMenuItem;
     }
 }

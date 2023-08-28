@@ -60,5 +60,19 @@ namespace NorthwindProject.WinForms
             suppliersList.MdiParent = this;
             suppliersList.Show();
         }
+
+        private void menuShipperCreate_Click(object sender, EventArgs e)
+        {
+            var shipperAdd = new ShipperCreateForm();
+            shipperAdd.MdiParent = this;
+            shipperAdd.Show();
+        }
+
+        private void nakliyecileriListeleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var shipperList = new ShipperListForm();
+            shipperList.MdiParent = this;
+            shipperList.Show();
+        }
     }
 }
