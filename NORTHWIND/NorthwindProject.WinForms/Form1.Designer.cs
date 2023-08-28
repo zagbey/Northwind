@@ -43,15 +43,18 @@
             menuShipper = new ToolStripMenuItem();
             menuShipperCreate = new ToolStripMenuItem();
             nakliyecileriListeleToolStripMenuItem = new ToolStripMenuItem();
+            menuEmployee = new ToolStripMenuItem();
+            menuEmployeeCreate = new ToolStripMenuItem();
+            menuEmployeeList = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { siparişYönetimiToolStripMenuItem, ürünYönetimiToolStripMenuItem, kategoriYönetimiToolStripMenuItem, tedarikçiYönetimiToolStripMenuItem, menuShipper });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { siparişYönetimiToolStripMenuItem, menuEmployee, ürünYönetimiToolStripMenuItem, kategoriYönetimiToolStripMenuItem, tedarikçiYönetimiToolStripMenuItem, menuShipper });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1139, 24);
+            menuStrip1.Size = new Size(1112, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             menuStrip1.ItemClicked += menuStrip1_ItemClicked;
@@ -66,7 +69,7 @@
             // yeniSiparişToolStripMenuItem
             // 
             yeniSiparişToolStripMenuItem.Name = "yeniSiparişToolStripMenuItem";
-            yeniSiparişToolStripMenuItem.Size = new Size(133, 22);
+            yeniSiparişToolStripMenuItem.Size = new Size(180, 22);
             yeniSiparişToolStripMenuItem.Text = "Yeni Sipariş";
             yeniSiparişToolStripMenuItem.Click += yeniSiparişToolStripMenuItem_Click;
             // 
@@ -80,14 +83,14 @@
             // menuNewProduct
             // 
             menuNewProduct.Name = "menuNewProduct";
-            menuNewProduct.Size = new Size(140, 22);
+            menuNewProduct.Size = new Size(180, 22);
             menuNewProduct.Text = "Yeni Ürün";
             menuNewProduct.Click += menuNewProduct_Click;
             // 
             // menuProductList
             // 
             menuProductList.Name = "menuProductList";
-            menuProductList.Size = new Size(140, 22);
+            menuProductList.Size = new Size(180, 22);
             menuProductList.Text = "Tüm Ürünler";
             menuProductList.Click += menuProductList_Click;
             // 
@@ -154,11 +157,30 @@
             nakliyecileriListeleToolStripMenuItem.Text = "Nakliyecileri Listele";
             nakliyecileriListeleToolStripMenuItem.Click += nakliyecileriListeleToolStripMenuItem_Click;
             // 
+            // menuEmployee
+            // 
+            menuEmployee.DropDownItems.AddRange(new ToolStripItem[] { menuEmployeeCreate, menuEmployeeList });
+            menuEmployee.Name = "menuEmployee";
+            menuEmployee.Size = new Size(107, 20);
+            menuEmployee.Text = "Çalışan Yönetimi";
+            // 
+            // menuEmployeeCreate
+            // 
+            menuEmployeeCreate.Name = "menuEmployeeCreate";
+            menuEmployeeCreate.Size = new Size(180, 22);
+            menuEmployeeCreate.Text = "Çalışan Ekle";
+            // 
+            // menuEmployeeList
+            // 
+            menuEmployeeList.Name = "menuEmployeeList";
+            menuEmployeeList.Size = new Size(180, 22);
+            menuEmployeeList.Text = "Çalışanları Listele";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1139, 554);
+            ClientSize = new Size(1112, 548);
             Controls.Add(menuStrip1);
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
@@ -187,5 +209,8 @@
         private ToolStripMenuItem menuShipper;
         private ToolStripMenuItem menuShipperCreate;
         private ToolStripMenuItem nakliyecileriListeleToolStripMenuItem;
+        private ToolStripMenuItem menuEmployee;
+        private ToolStripMenuItem menuEmployeeCreate;
+        private ToolStripMenuItem menuEmployeeList;
     }
 }
